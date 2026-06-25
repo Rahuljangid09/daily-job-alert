@@ -1,0 +1,24 @@
+{
+  "actorSpecification": 1,
+  "name": "daily-job-alert",
+  "title": "Daily Job Alert — Backend & Fullstack",
+  "description": "Scrapes LinkedIn + RemoteOK daily, uses Claude AI to rank top 5 jobs, and sends a beautiful HTML email digest.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "dockerfile": "./Dockerfile",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Job Alert Results",
+      "views": {
+        "overview": {
+          "title": "Daily Picks",
+          "transformation": { "fields": ["date","picks"] },
+          "display": { "component": "table" }
+        }
+      }
+    }
+  }
+}

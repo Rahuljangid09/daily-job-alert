@@ -1,0 +1,34 @@
+{
+  "title": "Daily Job Alert Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "anthropicApiKey": {
+      "title": "Anthropic API Key",
+      "description": "Your Anthropic API key for Claude AI job ranking. Get it from https://console.anthropic.com/",
+      "type": "string",
+      "isSecret": true,
+      "editor": "textfield"
+    },
+    "resendApiKey": {
+      "title": "Resend API Key",
+      "description": "Your free Resend.com API key. Sign up at https://resend.com → API Keys → Create API Key.",
+      "type": "string",
+      "isSecret": true,
+      "editor": "textfield"
+    },
+    "recipientEmail": {
+      "title": "Your Email Address",
+      "description": "Where to send the daily job digest.",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "dryRun": {
+      "title": "Dry Run (skip email)",
+      "description": "If true, scrapes and ranks jobs but does NOT send email. Use this to test first.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": ["anthropicApiKey", "resendApiKey", "recipientEmail"]
+}
